@@ -11,7 +11,7 @@ export default function TermAndCondition() {
     const currentTheme = getTheme(theme)
     const { t } = useTranslation();
     const content = useSelector(state => state.Content.termsAndCondition)
-    console.log("about", content)
+
     const source = {
         html: content?.msg
     };
@@ -23,8 +23,41 @@ export default function TermAndCondition() {
             />
 
             <RenderHtml
-                contentWidth={width}
-                source={source}
+                contentWidth={width * 0.5}
+                source={{
+                    html: `
+                        <div class="text-black">
+                          ${content?.msg}
+                        </div>
+                      `
+                }}
+                tagsStyles={{
+                    div: {
+                        color: currentTheme.defaultTextColor
+                    },
+                    p: {
+                        color: currentTheme.defaultTextColor
+                    },
+                    span: {
+                        color: currentTheme.defaultTextColor
+                    }
+                }}
+                classesStyles={{
+                    'text-black': {
+                        color: currentTheme.defaultTextColor
+                    }
+                }}
+                renderersProps={{
+                    div: {
+                        style: { color: currentTheme.defaultTextColor }
+                    },
+                    p: {
+                        style: { color: currentTheme.defaultTextColor }
+                    },
+                    span: {
+                        style: { color: currentTheme.defaultTextColor }
+                    }
+                }}
             />
 
         </View>

@@ -258,29 +258,29 @@ export default function SingleProduct(props) {
                         }}
                         tagsStyles={{
                             div: {
-                                color: 'black'
+                                color: currentTheme.defaultTextColor
                             },
                             p: {
-                                color: 'black'
+                                color: currentTheme.defaultTextColor
                             },
                             span: {
-                                color: 'black'
+                                color: currentTheme.defaultTextColor
                             }
                         }}
                         classesStyles={{
                             'text-black': {
-                                color: 'black'
+                                color: currentTheme.defaultTextColor
                             }
                         }}
                         renderersProps={{
                             div: {
-                                style: { color: 'black' }
+                                style: { color: currentTheme.defaultTextColor }
                             },
                             p: {
-                                style: { color: 'black' }
+                                style: { color: currentTheme.defaultTextColor }
                             },
                             span: {
-                                style: { color: 'black' }
+                                style: { color: currentTheme.defaultTextColor }
                             }
                         }}
                     />

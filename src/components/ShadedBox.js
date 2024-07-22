@@ -10,7 +10,7 @@ export default function ShadedBox(props) {
     return (
         <View style={[styles.container, {
             backgroundColor: currentTheme.Background,
-            borderColor: currentTheme.primary,
+            borderColor: currentTheme.secondary,
 
         }, STYLES.shadow, props.style]}>
             {props?.children}

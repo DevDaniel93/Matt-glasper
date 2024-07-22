@@ -6,6 +6,7 @@ import { label } from '../../constants/lables';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { selectTotalAmount } from '../../redux/slices/Cart';
+import { getTheme } from '../../constants/theme';
 
 export default function Review(props) {
   const { data } = props
@@ -13,7 +14,8 @@ export default function Review(props) {
   const { t } = useTranslation();
   const cart = useSelector(state => state.Cart.cart)
   const totalAmount = useSelector(selectTotalAmount);
-
+  const theme = useSelector(state => state.Theme.theme);
+  const currentTheme = getTheme(theme);
   const ShippingData = [
     { key: t('First Name '), value: data?.shipping?.first_name },
     { key: t('Last Name '), value: data?.shipping?.last_name },
@@ -25,8 +27,8 @@ export default function Review(props) {
 
   const renderItem = ({ item }) => (
     <View style={styles.rows}>
-      <Text style={styles.infoTxt}>{item.key}</Text>
-      <Text style={styles.infoTxt}>{item.value}</Text>
+      <Text style={[styles.infoTxt, { color: currentTheme.defaultTextColor }]}>{item.key}</Text>
+      <Text style={[styles.infoTxt, { color: currentTheme.defaultTextColor }]}>{item.value}</Text>
     </View>
   );
 
@@ -37,14 +39,14 @@ export default function Review(props) {
         showsVerticalScrollIndicator={false}
       >
         <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-          <Text style={styles.heading}>{t('Items')} ({cart?.length})</Text>
+          <Text style={[styles.heading, { color: currentTheme.defaultTextColor }]}>{t('Items')} ({cart?.length})</Text>
           <TouchableOpacity>
             <Icon type={IconType.SimpleLineIcons} name={"arrow-right"} color={COLORS.black} />
           </TouchableOpacity>
         </View>
         <View style={styles.line} />
 
-        <Text style={styles.heading}>
+        <Text style={[styles.heading, { color: currentTheme.defaultTextColor }]}>
           {t('ShippingAddress')}
         </Text>
         <View>
@@ -57,30 +59,30 @@ export default function Review(props) {
           />
         </View>
         <View style={styles.line} />
-        <Text style={styles.heading}>
+        <Text style={[styles.heading, { color: currentTheme.defaultTextColor }]}>
           {t('OrderInfo')}
         </Text>
         <View style={styles.totalRow}>
-          <Text style={styles.infoTxt}>
+          <Text style={[styles.infoTxt, { color: currentTheme.defaultTextColor }]}>
             {t('Sub_Total')}
           </Text>
-          <Text style={styles.infoTxt}>
+          <Text style={[styles.infoTxt, { color: currentTheme.defaultTextColor }]}>
             ${totalAmount}
           </Text>
         </View>
         <View style={styles.totalRow}>
-          <Text style={styles.infoTxt}>
+          <Text style={[styles.infoTxt, { color: currentTheme.defaultTextColor }]}>
             {t('ShippingCost')}
           </Text>
-          <Text style={styles.infoTxt}>
+          <Text style={[styles.infoTxt, { color: currentTheme.defaultTextColor }]}>
             ${data?.shipping_lines[0]?.total}
           </Text>
         </View>
         <View style={[styles.totalRow, { marginBottom: SIZES.twenty }]}>
-          <Text style={[styles.infoTxt, { color: COLORS.defaultTextColor, fontSize: SIZES.twenty }]}>
+          <Text style={[styles.infoTxt, { color: currentTheme.defaultTextColor, fontSize: SIZES.twenty }]}>
             {t('Total')}
           </Text>
-          <Text style={[styles.infoTxt, { color: COLORS.defaultTextColor, fontSize: SIZES.twenty }]}>
+          <Text style={[styles.infoTxt, { color: currentTheme.defaultTextColor, fontSize: SIZES.twenty }]}>
             ${(totalAmount + Number(data?.shipping_lines[0] !== null ? data?.shipping_lines[0]?.total : 0))}
           </Text>
         </View>

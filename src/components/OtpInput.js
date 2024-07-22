@@ -2,11 +2,14 @@
 import React, { useRef, useState } from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import { COLORS, SIZES } from '../constants';
+import { useSelector } from 'react-redux';
+import { getTheme } from '../constants/theme';
 
 const OtpInput = ({ codeLength = 6, onCodeFilled }) => {
     const [code, setCode] = useState(new Array(codeLength).fill(''));
     const inputs = useRef([]);
-
+    const theme = useSelector(state => state.Theme.theme)
+    const currentTheme = getTheme(theme)
     const handleChange = (text, index) => {
         if (text.length > 1) return;
         const newCode = [...code];
@@ -35,9 +38,10 @@ const OtpInput = ({ codeLength = 6, onCodeFilled }) => {
                 .map((_, index) => (
                     <TextInput
                         key={index}
-                        style={styles.input}
+                        style={[styles.input, { color: currentTheme.defaultTextColor }]}
                         keyboardType="numeric"
                         maxLength={1}
+
                         ref={(input) => (inputs.current[index] = input)}
                         onChangeText={(text) => handleChange(text, index)}
                         onKeyPress={(e) => handleKeyPress(e, index)}

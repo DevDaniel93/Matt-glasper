@@ -29,6 +29,7 @@ export default function AllProducts(props) {
     const user = useSelector(state => state.Auth.user)
     const [search, setSearch] = useState("")
     const [products, setProducts] = useState([])
+
     const [filterProducts, setFilterProducts] = useState([])
 
     const onReset = () => {

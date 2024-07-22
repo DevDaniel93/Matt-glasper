@@ -9,7 +9,7 @@ import { getTheme } from '../constants/theme';
 const CustomDropDownPicker = (props) => {
     const theme = useSelector(state => state.Theme.theme)
     const currentTheme = getTheme(theme)
-    const [focusColor, setFocusColor] = useState(COLORS.charcoalGrey);
+    const [focusColor, setFocusColor] = useState(currentTheme.defaultTextColor);
     const [open, setOpen] = useState(false)
     const [value, setValue] = useState(props?.value ? props?.value : null)
     const [items, setItems] = useState(props?.list ? props?.list : [])
@@ -21,21 +21,29 @@ const CustomDropDownPicker = (props) => {
                 <Text style={[styles.textLabel, { color: focusColor }]}>
                     {props.label}
                     {props?.required &&
-                        <Text style={{color: currentTheme.red}}> *</Text>}
+                        <Text style={{ color: currentTheme.red }}> *</Text>}
                 </Text>
             }
             <DropDownPicker
                 onOpen={() => {
                     setFocusColor(currentTheme.primary)
                 }}
+                style={{
+                    backgroundColor: currentTheme.Background,
+                    borderColor: currentTheme.charcoalGrey,
+                }}
                 onClose={() => {
                     setFocusColor(currentTheme.defaultTextColor)
                 }}
-                containerStyle={styles(props).dropDown}
+
+
+                textStyle={{ color: currentTheme.defaultTextColor, }}
+                listItemContainerStyle={{ backgroundColor: currentTheme.Background, }}
+                containerStyle={[styles(props).dropDown,]}
                 placeholder={props?.placeholder}
                 open={open}
                 value={props?.value}
-                items={ props?.list}
+                items={props?.list}
                 setOpen={setOpen}
                 setValue={props?.onChangeValue}
                 setItems={setItems}

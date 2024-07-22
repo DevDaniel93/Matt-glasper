@@ -186,7 +186,7 @@ export default function CheckOut(props) {
 
     useEffect(() => {
         Place_order()
-    }, [progress])
+    }, [progress, paymentMethod])
 
     useEffect(() => {
         const shippingCost = calculateShippingCost(cart, shippingDetails);
@@ -593,16 +593,24 @@ export default function CheckOut(props) {
 
                                                 <CardField
                                                     postalCodeEnabled={false}
+
                                                     placeholder={{ number: '4242 4242 4242 4242' }}
+
                                                     cardStyle={{
+                                                        textColor: currentTheme.defaultTextColor,
                                                         borderColor: currentTheme?.defaultTextColor,
                                                         borderWidth: 1,
                                                         borderRadius: 8,
+                                                        placeholderColor: currentTheme?.gray,
                                                         backgroundColor: currentTheme?.Background,
                                                     }}
+
                                                     style={{
+
+
                                                         height: SIZES.fifty,
                                                         marginVertical: SIZES.twentyFive,
+
                                                     }}
                                                     onCardChange={(cardDetails) => {
                                                         setCardDetails(cardDetails);

@@ -206,7 +206,9 @@ const CustomDrawer = (props) => {
                     </View>
                 </CustomModal>
 
-                <View style={{ flexDirection: "row", marginTop: SIZES.twentyFive, alignItems: "center" }}>
+                {/* Light Dark mode */}
+
+                {/* <View style={{ flexDirection: "row", marginTop: SIZES.twentyFive, alignItems: "center" }}>
                     <Text style={[styles.toggleText, { color: currentTheme.defaultTextColor }]}>
                         {theme} mode
                     </Text>
@@ -217,7 +219,7 @@ const CustomDrawer = (props) => {
                         onValueChange={toggleSwitch}
                         value={isEnabled}
                     />
-                </View>
+                </View> */}
             </View>
         </DrawerContentScrollView>
     );

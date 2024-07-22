@@ -22,24 +22,24 @@ export default function PhoneTextInput(props) {
                 : country.callingCode[0],
         );
         setFlag(country?.cca2)
-
-
     };
 
     return (
         <View>
-            <Text style={styles.textLabel}> {t('PhoneNumber')} <Text style={{color: currentTheme.red}}> *</Text></Text>
+            <Text style={[styles.textLabel, { color: currentTheme.defaultTextColor }]}> {t('PhoneNumber')} <Text style={{ color: currentTheme.red }}> *</Text></Text>
             <PhoneInput
                 layout="first"
                 defaultCode="US"
                 ref={phoneInput}
+
+                codeTextStyle={{ color: currentTheme.defaultTextColor }}
                 defaultValue={phone}
                 onChangeCountry={onSelect}
                 onChangeText={text => setPhone(text)}
-                textInputStyle={styles.textInputStyle}
-                textContainerStyle={styles.textContainerStyle}
-                countryPickerButtonStyle={styles.countryPickerButtonStyle}
-                containerStyle={[styles.containerStyle, { borderColor: borderColor }]}
+                textInputStyle={[styles.textInputStyle, { color: currentTheme.defaultTextColor }]}
+                textContainerStyle={[styles.textContainerStyle, { backgroundColor: currentTheme.Background }]}
+                countryPickerButtonStyle={{ backgroundColor: currentTheme.Background, borderTopLeftRadius: SIZES.ten, borderBottomLeftRadius: SIZES.ten }}
+                containerStyle={[styles.containerStyle, { borderColor: borderColor, backgroundColor: currentTheme.Background }]}
             />
 
             {phone.length && !phoneInput.current?.isValidNumber(phone) ? (
@@ -53,11 +53,12 @@ const styles = StyleSheet.create({
     textInputStyle: {
         padding: 0,
     },
-    countryPickerButtonStyle: {
-        backgroundColor: COLORS.transparent,
-    },
     textContainerStyle: {
-        backgroundColor: COLORS.transparent,
+        borderWidth: .5,
+        borderColor: COLORS.charcoalGrey,
+        borderTopRightRadius: SIZES.ten,
+
+        borderBottomRightRadius: SIZES.ten,
     },
     containerStyle: {
         height: SIZES.twentyFive * 2.3,
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: SIZES.ten,
         marginTop: SIZES.fifteen * 1.3,
+
     },
     textStyle: {
         color: 'red',
