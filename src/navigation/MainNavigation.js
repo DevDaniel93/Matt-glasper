@@ -69,7 +69,7 @@ export default function MainNavigation() {
 
         }
     }
-    dispatch(setLoading(false))
+
 
     useEffect(() => {
         getContent()
