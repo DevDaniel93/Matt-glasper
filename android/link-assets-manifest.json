@@ -1,0 +1,85 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/BebasNeue-Regular.ttf",
+      "sha1": "ac310d4271fb1ed5012f6d512b0e7e061bcefdd2"
+    },
+    {
+      "path": "assets/fonts/Century-Gothic.ttf",
+      "sha1": "a2f9ca2ae529a6cc03cad88fefb0a0e45b7046f4"
+    },
+    {
+      "path": "assets/fonts/Jost-Regular.ttf",
+      "sha1": "63de8f35a2b969d64b1e4012d26a38e8be1e01ae"
+    },
+    {
+      "path": "assets/fonts/Poppins-Bold.ttf",
+      "sha1": "974b66074f1e265c0d203a4e2989c6120af3bc55"
+    },
+    {
+      "path": "assets/fonts/Poppins-Light.ttf",
+      "sha1": "107454fb84957d1ea4bd4c0335377df253eb2258"
+    },
+    {
+      "path": "assets/fonts/Poppins-Medium.ttf",
+      "sha1": "6575dbf38e9e61beec498e2be61c89d43399db24"
+    },
+    {
+      "path": "assets/fonts/Poppins-Regular.ttf",
+      "sha1": "dd48971530e3f19f7067ad80ce6c215365fe7269"
+    },
+    {
+      "path": "assets/fonts/Poppins-SemiBold.ttf",
+      "sha1": "33cccb49029917a6175e7e7a754e296d518c2710"
+    },
+    {
+      "path": "assets/fonts/QwitcherGrypen-Bold.ttf",
+      "sha1": "df138de7b1b8ee6eeec7eb01be6c24295c1ed3b2"
+    },
+    {
+      "path": "assets/fonts/QwitcherGrypen-Regular.ttf",
+      "sha1": "c2536a713cf5bfaa21511fd05c7219019997247e"
+    },
+    {
+      "path": "assets/fonts/Rakkas-Regular.ttf",
+      "sha1": "b2a88f6a0f087fb6af859de21a88cb808549d2b4"
+    },
+    {
+      "path": "assets/fonts/Raleway-Bold.ttf",
+      "sha1": "b887eb952d1891535389db7d1d1c127d1734bd97"
+    },
+    {
+      "path": "assets/fonts/Raleway-ExtraBold.ttf",
+      "sha1": "6db23ee9e016f3e0c30b223579026c6b00ab9ec5"
+    },
+    {
+      "path": "assets/fonts/Raleway-ExtraLight.ttf",
+      "sha1": "06eabfa18adc2d884b83bc052f0eb2fdfc7afed4"
+    },
+    {
+      "path": "assets/fonts/Raleway-Heavy.ttf",
+      "sha1": "e1fca2daacf71e1ac6e397a5bbb9ef21019768ac"
+    },
+    {
+      "path": "assets/fonts/Raleway-Light.ttf",
+      "sha1": "e9eb86427eaa4fe7e05e32902fc35742dcee4ccb"
+    },
+    {
+      "path": "assets/fonts/Raleway-Medium.ttf",
+      "sha1": "6d7bd481efb4e28b13310d8f599f1a8a67b3fa87"
+    },
+    {
+      "path": "assets/fonts/Raleway-Regular.ttf",
+      "sha1": "f7c22a60e4bbae4e0b673de414108ec1a5a50edf"
+    },
+    {
+      "path": "assets/fonts/Raleway-SemiBold.ttf",
+      "sha1": "68b768cec3815e7d4639d5f0dec54aeff913de53"
+    },
+    {
+      "path": "assets/fonts/Raleway-Thin.ttf",
+      "sha1": "627bf8be5fb4fa704e13562b401ffd6b07d8696c"
+    }
+  ]
+}
