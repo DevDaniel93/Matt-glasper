@@ -8,32 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* angelBodyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* angelBodyTests.m */; };
-		089606C5B32B47008EEC430D /* Rakkas-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAC52845D668406C9604ECBB /* Rakkas-Regular.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-angelBody.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-angelBody.a */; };
-		0E35E8C8BCE84D4BB1434F11 /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53EC6B541C994CBE8FAD45FF /* Raleway-ExtraLight.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		14B64E1524A141A5A22A10C4 /* QwitcherGrypen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FA28A3392AF4E88A18E5557 /* QwitcherGrypen-Bold.ttf */; };
-		1BECD4CDD4A94B169CB5BCFA /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFF8C9FD6ADF495493CE3C23 /* Raleway-Thin.ttf */; };
-		21DFAE6BD66F4EB2A491D000 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FAA623C916B484D8654C266 /* Poppins-Regular.ttf */; };
-		2AB5ED8BCACF41D790968577 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 710FA0AEC102499BB940BA84 /* Poppins-Medium.ttf */; };
-		35E6C38D4AE94ED8B49FED52 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB8F65808A1F4D1EBB8BE59B /* BebasNeue-Regular.ttf */; };
-		3DA407F9AF5E4A8A917C62E7 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552E0355E5AE41C69C8C08A3 /* Raleway-SemiBold.ttf */; };
-		42844B1529154C0F8ECB7801 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C905C510F3E4ACDA33B7117 /* Poppins-SemiBold.ttf */; };
-		556FD8497F4A4F5F8E4695E9 /* Raleway-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2B0518589984111ACB91AB5 /* Raleway-Heavy.ttf */; };
-		57A05D5080E34442A8E1DE89 /* QwitcherGrypen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5248A0ED9544D97BF11950A /* QwitcherGrypen-Regular.ttf */; };
-		5FF487E18AC742D08CFC1E5A /* Jost-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 002CA6E5F9DA49E099D8CB98 /* Jost-Regular.ttf */; };
-		648095824A2B418BA21DF7B4 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7AD3E43B3454B5C845B1569 /* Raleway-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-angelBody-angelBodyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-angelBody-angelBodyTests.a */; };
-		7A0D43F5815D4EB39E9F62DE /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71CCD72390324C2DA75B2D82 /* Raleway-ExtraBold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		839E0D4CBCCA4D9CB3757320 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EBE2A0CC59C4B40A4A73706 /* Raleway-Light.ttf */; };
-		8AFA474E79A84D3880F6D0E0 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68E3E8E7DCFB4996B07FE0C3 /* Raleway-Regular.ttf */; };
-		B595381D19A241899F39E6C7 /* Century-Gothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9279FB6C3B2144C284828278 /* Century-Gothic.ttf */; };
-		CB499E264DD942FAA5D09E7D /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 045954C2B6C64B8A8737A96E /* Raleway-Bold.ttf */; };
-		DDA5B951971E4300BF08DC89 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA5E2C9B14CC44209416C11F /* Poppins-Bold.ttf */; };
-		E6AA0109FBDE48A08EBC66B5 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE786D57719345E98CD200E5 /* Poppins-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,44 +27,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002CA6E5F9DA49E099D8CB98 /* Jost-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-Regular.ttf"; path = "../assets/fonts/Jost-Regular.ttf"; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* angelBodyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = angelBodyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* angelBodyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = angelBodyTests.m; sourceTree = "<group>"; };
-		045954C2B6C64B8A8737A96E /* Raleway-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Bold.ttf"; path = "../assets/fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* angelBody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = angelBody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = angelBody/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = angelBody/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = angelBody/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = angelBody/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = angelBody/main.m; sourceTree = "<group>"; };
-		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = angelBody/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+	    13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = angelBody/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-angelBody-angelBodyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-angelBody-angelBodyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1EBE2A0CC59C4B40A4A73706 /* Raleway-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Light.ttf"; path = "../assets/fonts/Raleway-Light.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-angelBody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-angelBody.debug.xcconfig"; path = "Target Support Files/Pods-angelBody/Pods-angelBody.debug.xcconfig"; sourceTree = "<group>"; };
-		3FA28A3392AF4E88A18E5557 /* QwitcherGrypen-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "QwitcherGrypen-Bold.ttf"; path = "../assets/fonts/QwitcherGrypen-Bold.ttf"; sourceTree = "<group>"; };
-		53EC6B541C994CBE8FAD45FF /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-ExtraLight.ttf"; path = "../assets/fonts/Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
-		552E0355E5AE41C69C8C08A3 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-SemiBold.ttf"; path = "../assets/fonts/Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-angelBody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-angelBody.release.xcconfig"; path = "Target Support Files/Pods-angelBody/Pods-angelBody.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-angelBody-angelBodyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-angelBody-angelBodyTests.debug.xcconfig"; path = "Target Support Files/Pods-angelBody-angelBodyTests/Pods-angelBody-angelBodyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5C905C510F3E4ACDA33B7117 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-angelBody.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-angelBody.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FAA623C916B484D8654C266 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		68E3E8E7DCFB4996B07FE0C3 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Regular.ttf"; path = "../assets/fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
-		710FA0AEC102499BB940BA84 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		71CCD72390324C2DA75B2D82 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-ExtraBold.ttf"; path = "../assets/fonts/Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = angelBody/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-angelBody-angelBodyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-angelBody-angelBodyTests.release.xcconfig"; path = "Target Support Files/Pods-angelBody-angelBodyTests/Pods-angelBody-angelBodyTests.release.xcconfig"; sourceTree = "<group>"; };
-		9279FB6C3B2144C284828278 /* Century-Gothic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Century-Gothic.ttf"; path = "../assets/fonts/Century-Gothic.ttf"; sourceTree = "<group>"; };
-		C2B0518589984111ACB91AB5 /* Raleway-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Heavy.ttf"; path = "../assets/fonts/Raleway-Heavy.ttf"; sourceTree = "<group>"; };
-		C5248A0ED9544D97BF11950A /* QwitcherGrypen-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "QwitcherGrypen-Regular.ttf"; path = "../assets/fonts/QwitcherGrypen-Regular.ttf"; sourceTree = "<group>"; };
-		CAC52845D668406C9604ECBB /* Rakkas-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Rakkas-Regular.ttf"; path = "../assets/fonts/Rakkas-Regular.ttf"; sourceTree = "<group>"; };
-		D7AD3E43B3454B5C845B1569 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Medium.ttf"; path = "../assets/fonts/Raleway-Medium.ttf"; sourceTree = "<group>"; };
-		EB8F65808A1F4D1EBB8BE59B /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BebasNeue-Regular.ttf"; path = "../assets/fonts/BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EE786D57719345E98CD200E5 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
-		EFF8C9FD6ADF495493CE3C23 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Thin.ttf"; path = "../assets/fonts/Raleway-Thin.ttf"; sourceTree = "<group>"; };
-		FA5E2C9B14CC44209416C11F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,34 +108,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		32AF0189F7E24FF79C1974DE /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EB8F65808A1F4D1EBB8BE59B /* BebasNeue-Regular.ttf */,
-				9279FB6C3B2144C284828278 /* Century-Gothic.ttf */,
-				002CA6E5F9DA49E099D8CB98 /* Jost-Regular.ttf */,
-				FA5E2C9B14CC44209416C11F /* Poppins-Bold.ttf */,
-				EE786D57719345E98CD200E5 /* Poppins-Light.ttf */,
-				710FA0AEC102499BB940BA84 /* Poppins-Medium.ttf */,
-				5FAA623C916B484D8654C266 /* Poppins-Regular.ttf */,
-				5C905C510F3E4ACDA33B7117 /* Poppins-SemiBold.ttf */,
-				3FA28A3392AF4E88A18E5557 /* QwitcherGrypen-Bold.ttf */,
-				C5248A0ED9544D97BF11950A /* QwitcherGrypen-Regular.ttf */,
-				CAC52845D668406C9604ECBB /* Rakkas-Regular.ttf */,
-				045954C2B6C64B8A8737A96E /* Raleway-Bold.ttf */,
-				71CCD72390324C2DA75B2D82 /* Raleway-ExtraBold.ttf */,
-				53EC6B541C994CBE8FAD45FF /* Raleway-ExtraLight.ttf */,
-				C2B0518589984111ACB91AB5 /* Raleway-Heavy.ttf */,
-				1EBE2A0CC59C4B40A4A73706 /* Raleway-Light.ttf */,
-				D7AD3E43B3454B5C845B1569 /* Raleway-Medium.ttf */,
-				68E3E8E7DCFB4996B07FE0C3 /* Raleway-Regular.ttf */,
-				552E0355E5AE41C69C8C08A3 /* Raleway-SemiBold.ttf */,
-				EFF8C9FD6ADF495493CE3C23 /* Raleway-Thin.ttf */,
-			);
-			name = Resources;
-			path = "";
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +124,6 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				32AF0189F7E24FF79C1974DE /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -314,26 +245,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				35E6C38D4AE94ED8B49FED52 /* BebasNeue-Regular.ttf in Resources */,
-				B595381D19A241899F39E6C7 /* Century-Gothic.ttf in Resources */,
-				5FF487E18AC742D08CFC1E5A /* Jost-Regular.ttf in Resources */,
-				DDA5B951971E4300BF08DC89 /* Poppins-Bold.ttf in Resources */,
-				E6AA0109FBDE48A08EBC66B5 /* Poppins-Light.ttf in Resources */,
-				2AB5ED8BCACF41D790968577 /* Poppins-Medium.ttf in Resources */,
-				21DFAE6BD66F4EB2A491D000 /* Poppins-Regular.ttf in Resources */,
-				42844B1529154C0F8ECB7801 /* Poppins-SemiBold.ttf in Resources */,
-				14B64E1524A141A5A22A10C4 /* QwitcherGrypen-Bold.ttf in Resources */,
-				57A05D5080E34442A8E1DE89 /* QwitcherGrypen-Regular.ttf in Resources */,
-				089606C5B32B47008EEC430D /* Rakkas-Regular.ttf in Resources */,
-				CB499E264DD942FAA5D09E7D /* Raleway-Bold.ttf in Resources */,
-				7A0D43F5815D4EB39E9F62DE /* Raleway-ExtraBold.ttf in Resources */,
-				0E35E8C8BCE84D4BB1434F11 /* Raleway-ExtraLight.ttf in Resources */,
-				556FD8497F4A4F5F8E4695E9 /* Raleway-Heavy.ttf in Resources */,
-				839E0D4CBCCA4D9CB3757320 /* Raleway-Light.ttf in Resources */,
-				648095824A2B418BA21DF7B4 /* Raleway-Medium.ttf in Resources */,
-				8AFA474E79A84D3880F6D0E0 /* Raleway-Regular.ttf in Resources */,
-				3DA407F9AF5E4A8A917C62E7 /* Raleway-SemiBold.ttf in Resources */,
-				1BECD4CDD4A94B169CB5BCFA /* Raleway-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,7 +546,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -663,7 +574,6 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -672,13 +582,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
-				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
-				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -715,7 +619,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -735,7 +639,6 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -744,13 +647,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
-				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
-				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

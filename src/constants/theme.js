@@ -10,6 +10,7 @@ export const COLORS = {
     primary: "#FF856A",
     purple: "#4e1789",
     lightPurple: "#871af6",
+    Background: "#24262b",
     darkPurple: "#382649",
     purpleShade: "#3c225d",
     textGrey: "#8a7e9a",
