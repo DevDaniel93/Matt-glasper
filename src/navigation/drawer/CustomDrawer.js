@@ -46,7 +46,7 @@ const CustomDrawer = (props) => {
     }, [theme]);
     useEffect(() => {
         if (user === null) {
-            const filterMenu = Menu.slice(0, 9)
+            const filterMenu = Menu.slice(0, 8)
             setSelectedMenu(filterMenu);
         }
         else {

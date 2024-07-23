@@ -17,9 +17,9 @@ export default function PhoneTextInput(props) {
 
     const onSelect = country => {
         setCountryCode(
-            !country.callingCode[0].includes('+')
-                ? `+${country.callingCode[0]}`
-                : country.callingCode[0],
+            !country?.callingCode[0]?.includes('+')
+                ? `+${country?.callingCode[0]}`
+                : country?.callingCode[0],
         );
         setFlag(country?.cca2)
     };

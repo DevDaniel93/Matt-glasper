@@ -104,6 +104,7 @@ export default function Home(props) {
 
     useFocusEffect(
         useCallback(() => {
+            setPage(1)
             getProduct();
             return () => {
                 // Cleanup function if needed
@@ -194,6 +195,7 @@ export default function Home(props) {
 
                     <CustomButton
                         btnStyle={styles.btnStyle}
+                        disabled={!hasMore}
                         onPress={() => {
                             setPage(pre => pre + 1)
                             getProduct()
