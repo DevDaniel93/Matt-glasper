@@ -21,6 +21,7 @@ export default function Categories(props) {
 
 
     const _renderItem = ({ item }) => {
+
         return (
             <TouchableOpacity
                 onPress={() => {

@@ -24,7 +24,7 @@ export const getPayment = (params) => async (dispatch) => {
                 }
             })
         }).catch((error) => {
-            console.log("error===========>", error?.response?.data?.message)
+            console.log("error geting payment===========>", error?.response?.data?.message)
         })
 
     } catch (error) {

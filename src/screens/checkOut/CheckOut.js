@@ -570,7 +570,7 @@ export default function CheckOut(props) {
 
                 /> :
                     <>
-                        <StripeProvider publishableKey={paymentMethod?.settings?.test_publishable_key?.value}>
+                        <StripeProvider publishableKey={CONSTANTS.stripe_Key}>
                             <HeaderWithArrow
                                 label={t('Checkout')} />
                             <ProgressBar mode={progress} />

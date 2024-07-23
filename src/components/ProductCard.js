@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getTheme } from '../constants/theme'
 import { addToFav } from '../redux/slices/products'
 
-const ProductCard = ({ item, onFav }) => {
+const ProductCard = React.memo(({ item, onFav }) => {
     const theme = useSelector(state => state.Theme.theme)
     const currentTheme = getTheme(theme)
     const navigation = useNavigation()
@@ -83,7 +83,7 @@ const ProductCard = ({ item, onFav }) => {
             </View>
         </TouchableOpacity>
     )
-}
+})
 
 export default ProductCard
 

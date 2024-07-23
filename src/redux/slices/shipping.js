@@ -14,7 +14,7 @@ export const getCountries = () => async (dispatch) => {
 
             dispatch(saveCountries(response))
         }).catch((error) => {
-            console.log("error===========>", error?.response?.data?.message)
+            console.log("error in getting country===========>", error?.response?.data?.message)
         })
 
     } catch (error) {

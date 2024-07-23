@@ -319,12 +319,13 @@ export const CONSTANTS = {
     SHHIPPING_ZONE_ID: 3,
     login_id: "9C42HVfgYJk",
     transactionKey: "5Hh59u46KF8cztCD",
-    stripe_Payment_url: "https://custom3.mystagingserver.site/digi-cart-app/wp-json/stripe-payment/v1/create-payment-intent",
+    stripe_Payment_url: "https://demo25.mystagingserver.site/angel/wp-json/stripe-payment/v1/create-payment-intent",
+    stripe_Key: "pk_test_51PfgiXKok2Hx7w4Uhe7ilNHF7FKjxIL8qmgwsqWZhu9KBpMAY8IjLTdoSgm5oX5JuzBmsg2LppFcdLDhtJwxvDRi00VqUJ0E7k",
 
     API_URLS: {
-        Consumer_key: "ck_7c8cdbbfb4b76cc2cd28c6c95dde54209a015cc2",
-        Consumer_secret: "cs_7e50fedc161c40f4b55ec828418a7ac23927007e",
-        BASE: "https://custom3.mystagingserver.site/digi-cart-app/wp-json",
+        Consumer_key: "ck_ba3d79fe0eec184c5c7b68ef7df17b5c91a9f2f0",
+        Consumer_secret: "cs_1cba8166135840fde87dc1dfaf0eaf4d33c0de3b",
+        BASE: "https://demo25.mystagingserver.site/angel/wp-json",
         LOGIN: "/api/login",
         REGISTER: "/api/register",
         FORGOT_PASSWORD: "/api/forgot_password",

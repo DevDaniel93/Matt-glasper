@@ -3,21 +3,20 @@ import { ActivityIndicator, FlatList, ScrollView, StyleSheet, Text, View } from 
 import React, { useState, useEffect, useCallback } from 'react'
 import { STYLES } from '../../constants'
 import { useDispatch, useSelector } from 'react-redux'
-import { SIZES, getTheme } from '../../constants/theme'
+import { SIZES, getTheme, width } from '../../constants/theme'
 import { useTranslation } from 'react-i18next'
 import HeaderWithArrow from '../../components/HeaderWithArrow'
 import SearchFilter from '../../components/SearchFilter'
 import FilterModal from '../../components/FilterModal'
 import ProductCard from '../../components/ProductCard'
 import { getFilterProducts, getProducts } from '../../redux/slices/products'
-import { setLoading } from '../../redux/slices/utils'
-import { useFocusEffect } from '@react-navigation/native'
+
+import CustomButton from '../../components/CustomButton'
 
 export default function AllProducts(props) {
     const { navigation, route } = props
     const modal = React.useRef(null)
     const dispatch = useDispatch()
-    // const products = useSelector(state => state?.Product?.filterProduct)
     const { item } = route?.params
 
     const theme = useSelector(state => state.Theme.theme)
@@ -29,6 +28,7 @@ export default function AllProducts(props) {
     const user = useSelector(state => state.Auth.user)
     const [search, setSearch] = useState("")
     const [products, setProducts] = useState([])
+    const [isFilter, setIsFilter] = useState(false)
 
     const [filterProducts, setFilterProducts] = useState([])
 
@@ -37,6 +37,7 @@ export default function AllProducts(props) {
         setProducts([])
         setPage(1)
         getProduct()
+        setIsFilter(false)
     }
 
     const onCancel = () => {
@@ -46,11 +47,11 @@ export default function AllProducts(props) {
     }
 
     const onApply = (pro) => {
-        console.log(pro.length)
-        setProducts(pro);
 
+        setProducts(pro);
+        setIsFilter(true)
     }
-    const getProduct = useCallback(async () => {
+    const getProduct = async () => {
 
         if (loading || !hasMore) return; // Prevent multiple calls if already loading or no more data
         try {
@@ -58,7 +59,6 @@ export default function AllProducts(props) {
             setLoading(true);
             const params = {
                 ...(user !== null && { user_id: user?.user_id }),
-                ...(item !== null && { category: item }),
             }
 
             const response = await dispatch(getProducts(page, params));
@@ -66,35 +66,46 @@ export default function AllProducts(props) {
             if (response.length === 0) {
                 setHasMore(false); // No more data to load
             } else {
-                setProducts((prevProducts) => [...prevProducts, ...response]);
-                setPage(prevPage => prevPage + 1);
+
+
+                // setProducts((prevProducts) => [...prevProducts, ...response]);
+                setProducts(response)
+                // setPage(prevPage => prevPage + 1);
             }
             setLoading(false);
         } catch (error) {
             console.log("Failed to fetch products:", error);
             setLoading(false);
         }
-    }, [dispatch, loading, page, hasMore]);
+    }
+    // const getProduct = useCallback(async () => {
 
-
-    // const getPro = async () => {
+    //     if (loading || !hasMore) return; // Prevent multiple calls if already loading or no more data
     //     try {
-    //         dispatch(setLoading(true))
+    //         console.log("Fetching products");
+    //         setLoading(true);
     //         const params = {
+    //             ...(user !== null && { user_id: user?.user_id }),
     //             ...(item !== null && { category: item }),
-
     //         }
-    //         const page = 1
-    //         const response = await dispatch(getFilterProducts(page, params))
-    //         setProducts(response)
-    //         dispatch(setLoading(false))
 
+    //         const response = await dispatch(getProducts(page, params));
+
+    //         if (response.length === 0) {
+    //             setHasMore(false); // No more data to load
+    //         } else {
+    //             setProducts((prevProducts) => [...prevProducts, ...response]);
+    //             setPage(prevPage => prevPage + 1);
+    //         }
+    //         setLoading(false);
     //     } catch (error) {
-    //         dispatch(setLoading(false))
-
-    //         console.log("error when try to get product by category")
+    //         console.log("Failed to fetch products:", error);
+    //         setLoading(false);
     //     }
-    // }
+    // }, [dispatch, loading, page, hasMore]);
+
+
+
 
     const filterProductsBySearch = (searchText) => {
         if (searchText !== "") {
@@ -111,9 +122,9 @@ export default function AllProducts(props) {
     }, [search, products]);
     useEffect(() => {
         getProduct()
-    }, [getProduct]);
+    }, []);
 
-    console.log(filterProducts?.length)
+
     const RenderEmptyComponent = () => {
         return (
             <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -140,53 +151,64 @@ export default function AllProducts(props) {
                         }
                     }}
                 />
-                {filterProducts?.length === 0 ?
+                {loading ?
+                    <ActivityIndicator size="large" color={currentTheme.primary} style={{ marginVertical: 20 }} /> :
+                    filterProducts?.length === 0 ?
 
-                    <RenderEmptyComponent /> :
-                    <FlatList
-                        columnWrapperStyle={{
-                            justifyContent: "space-between",
-                        }}
-                        showsVerticalScrollIndicator={false}
-                        data={filterProducts}
-                        numColumns={2}
-                        renderItem={({ item }) => <ProductCard item={item} />}
-                        onEndReachedThreshold={0.1}
-                        onEndReached={() => {
-                            if (!loading && hasMore) {
-                                getProduct();
-                            }
-                        }}
-                        ListFooterComponent={() =>
-                            loading && <ActivityIndicator size="large" color={currentTheme.primary} style={{ marginVertical: 20 }} />
-                        }
-                    />
+                        <RenderEmptyComponent /> :
+                        <FlatList
+                            columnWrapperStyle={{
+                                justifyContent: "space-between",
+                            }}
+                            showsVerticalScrollIndicator={false}
+                            data={filterProducts}
+                            numColumns={2}
+                            renderItem={({ item }) => <ProductCard item={item} />}
+                        // onEndReachedThreshold={0.1}
+                        // onEndReached={() => {
+                        //     if (!loading && hasMore) {
+                        //         getProduct();
+                        //     }
+                        // }}
+                        // ListFooterComponent={() =>
+                        //     loading && <ActivityIndicator size="large" color={currentTheme.primary} style={{ marginVertical: 20 }} />
+                        // }
+                        />
                 }
 
-                {/* <FlatList
-                    columnWrapperStyle={{
-                        justifyContent: "space-between",
-                    }}
-                    showsVerticalScrollIndicator={false}
-                    data={filterProducts}
 
-                    keyExtractor={item => item.productId}
-                    numColumns={2}
-                    renderItem={({ item }) => {
-                        return (
-                            <ProductCard item={item} />
-                        )
-                    }}
-                    ListFooterComponent={() =>
-                        loading && <ActivityIndicator size="large" color={currentTheme.primary} style={{ marginVertical: 20 }} />
-                    }
-                    ListEmptyComponent={renderEmptyComponent}
-                /> */}
             </ScrollView>
+            {!isFilter && <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: SIZES.ten }}>
+                <CustomButton
+                    onPress={() => {
+                        setPage(pre => pre - 1)
+                        getProduct()
+                    }}
+                    disabled={page === 1}
+                    btnStyle={styles.btnStyle}
+                    label={"Back"}
+                />
+
+
+                <CustomButton
+                    btnStyle={styles.btnStyle}
+                    onPress={() => {
+                        setPage(pre => pre + 1)
+                        getProduct()
+                    }}
+                    label={"Next"}
+                />
+            </View>}
+
 
             <FilterModal modalizeRef={modal} onApply={onApply} onResetAll={onReset} onCancel={onCancel} />
         </View>
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    btnStyle: {
+        alignSelf: "center",
+        width: width * .42
+    }
+})

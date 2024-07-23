@@ -18,7 +18,7 @@ export const getTermsAndCondition = () => async (dispatch) => {
 
             dispatch(saveTerms(response))
         }).catch((error) => {
-            console.log("error===========>", error?.response?.data?.message)
+            console.log("error in Geting Terms and Condition===========>", error?.response?.data?.message)
         })
 
 
@@ -32,7 +32,7 @@ export const getPrivacyPolicy = () => async (dispatch) => {
         await GetPrivacy().then(async (response) => {
             dispatch(savePrivacy(response))
         }).catch((error) => {
-            console.log("error===========>", error?.response?.data?.message)
+            console.log("error in Geting privacy and Policy===========>", error?.response?.data?.message)
         })
 
     } catch (error) {
@@ -45,7 +45,7 @@ export const getAbout = () => async (dispatch) => {
         await GetAboutUs().then(async (response) => {
             dispatch(saveAbout(response))
         }).catch((error) => {
-            console.log("error===========>", error?.response?.data?.message)
+            console.log("error in Geting about===========>", error?.response?.data?.message)
         })
 
     } catch (error) {
