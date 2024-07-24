@@ -14,6 +14,7 @@ export const GetCategories = () => {
         params: {
             consumer_key: CONSTANTS.API_URLS.Consumer_key,
             consumer_secret: CONSTANTS.API_URLS.Consumer_secret,
+            per_page: 100
         },
     }
     return axios.get(

@@ -25,7 +25,9 @@ export default function SingleProduct(props) {
 
     const [quantity, setQuantity] = useState(1)
     const [isvisible, setIsvisible] = useState(false)
+    const [price, setPrice] = useState(productDetails?.price)
     const [variations, setVariations] = useState([])
+    const [images, setImages] = useState(productDetails?.images)
     const [selectedVariation, setSelectedVariation] = useState(null)
     const dispatch = useDispatch()
     const [selectedAttributes, setSelectedAttributes] = useState([]);
@@ -51,6 +53,7 @@ export default function SingleProduct(props) {
     useEffect(() => {
         getVariationByProductID()
     }, [])
+
 
     const Header = () => {
         return (
@@ -101,7 +104,7 @@ export default function SingleProduct(props) {
                     id: productDetails?.id,
                     productName: productDetails?.name,
                     quantity: quantity,
-                    price: productDetails?.price,
+                    price: price,
                     image: productDetails?.images[0]?.src,
                     variation_id: null
                 }
@@ -113,7 +116,7 @@ export default function SingleProduct(props) {
                     id: productDetails?.id,
                     productName: productDetails?.name,
                     quantity: quantity,
-                    price: productDetails?.price,
+                    price: price,
                     image: productDetails?.images[0]?.src,
                     attributes: selectedAttributes,
                     variation_id: selectedVariation !== null ? selectedVariation?.id : null
@@ -149,39 +152,54 @@ export default function SingleProduct(props) {
         )
     }
 
+
     return (
         <View
             showsVerticalScrollIndicator={false}
             style={[styles.container, { backgroundColor: currentTheme.Background }]}>
             <ScrollView>
-                <View style={{ position: "relative", }}>
+                <View style={{ height: height * .5, }}>
                     <Header />
-                    <ScrollView
-                        showsVerticalScrollIndicator={false}
-                        style={styles.variationsContainer}>
-                        {variations.map((item) => {
-                            return (
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        setSelectedVariation(item)
-                                    }}
-                                    style={{ marginTop: SIZES.ten }}>
-                                    <Image source={{ uri: item?.image?.src }}
-                                        style={[styles.variationImage,
-                                        {
-                                            borderColor: selectedVariation?.id === item?.id ? currentTheme.primary : currentTheme.defaultTextColor,
-                                            borderWidth: selectedVariation?.id === item?.id ? 2 : 0
-                                        }]}
-                                    />
-                                </TouchableOpacity>
-                            )
-                        })}
-                    </ScrollView>
+                    <View style={styles.variationsContainer}>
+
+
+                        <ScrollView
+                            showsVerticalScrollIndicator={false}
+                            style={{ flexGrow: 1 }}
+                        >
+                            {(variations || []).map((item) => {
+                                return (
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            try {
+                                                setSelectedVariation(item)
+                                                setPrice(item?.on_sale ? item?.regular_price : item?.price)
+                                                setImages([item?.image])
+                                            } catch (error) {
+                                                console.log(error)
+                                            }
+
+
+
+                                        }}
+                                        style={{ marginTop: SIZES.ten }}>
+                                        <Image source={{ uri: item?.image?.src }}
+                                            style={[styles.variationImage,
+                                            {
+                                                borderColor: selectedVariation?.id === item?.id ? currentTheme.primary : currentTheme.defaultTextColor,
+                                                borderWidth: selectedVariation?.id === item?.id ? 2 : 0
+                                            }]}
+                                        />
+                                    </TouchableOpacity>
+                                )
+                            })}
+                        </ScrollView>
+                    </View>
                     <FlatList
                         showsHorizontalScrollIndicator={false}
                         horizontal
                         pagingEnabled
-                        data={productDetails?.images}
+                        data={images}
                         renderItem={imagesSlider}
                     />
 
@@ -378,7 +396,7 @@ const styles = StyleSheet.create({
     },
     variationsContainer: {
         position: 'absolute',
-        flex: 1,
+        // flex: 1,
         height: height * .4,
         zIndex: 1000,
         left: SIZES.twenty,
@@ -386,7 +404,7 @@ const styles = StyleSheet.create({
 
     },
     imgContainer: {
-        height: height * .5,
+        // height: height * .5,
         width: width,
         borderBottomWidth: 1,
         borderRightWidth: 1,
@@ -452,3 +470,4 @@ const styles = StyleSheet.create({
         fontWeight: "600"
     }
 })
+

@@ -9,6 +9,7 @@ import { getTheme } from '../constants/theme'
 import { addToFav } from '../redux/slices/products'
 
 const ProductCard = React.memo(({ item, onFav }) => {
+
     const theme = useSelector(state => state.Theme.theme)
     const currentTheme = getTheme(theme)
     const navigation = useNavigation()

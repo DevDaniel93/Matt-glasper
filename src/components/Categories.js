@@ -19,24 +19,29 @@ export default function Categories(props) {
     const [selectId, setSelectedId] = useState(null)
 
 
-
     const _renderItem = ({ item }) => {
 
         return (
-            <TouchableOpacity
-                onPress={() => {
-                    setSelectedId(item?.id)
-                    props.onPress(item)
+            <View>
+                {item?.count > 0 &&
 
-                }}
-                style={styles.CategoryContainer}>
-                <Image style={[styles.img, { borderColor: selectId === item?.id ? COLORS.primary : currentTheme.defaultTextColor }]}
-                    source={{ uri: item?.image?.src }}
-                />
-                <Text style={[styles.txt, { color: currentTheme.defaultTextColor, }]}>
-                    {item?.name}
-                </Text>
-            </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => {
+                            setSelectedId(item?.id)
+                            props.onPress(item)
+
+                        }}
+                        style={styles.CategoryContainer}>
+                        <Image style={[styles.img, { borderColor: selectId === item?.id ? COLORS.primary : currentTheme.defaultTextColor }]}
+                            source={{ uri: item?.image?.src }}
+                        />
+                        <Text style={[styles.txt, { color: currentTheme.defaultTextColor, }]}>
+                            {item?.name?.replace('&amp;', '&').replace(/ /g, '\n')}
+                            {/* {item?.name} */}
+                        </Text>
+                    </TouchableOpacity>
+                }
+            </View>
         )
     }
     return (
@@ -100,12 +105,11 @@ const styles = StyleSheet.create({
         height: SIZES.fifty * .9,
         borderRadius: SIZES.fifty,
         borderWidth: 1,
-
         resizeMode: "contain"
     },
     txt: {
         marginTop: SIZES.five,
-
+        textAlign: "center",
         fontSize: SIZES.fifteen,
         fontFamily: FONTFAMILY.Poppins
     }

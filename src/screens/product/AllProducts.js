@@ -51,7 +51,7 @@ export default function AllProducts(props) {
         setProducts(pro);
         setIsFilter(true)
     }
-    const getProduct = async () => {
+    const getProduct = async (page) => {
 
         if (loading || !hasMore) return; // Prevent multiple calls if already loading or no more data
         try {
@@ -59,6 +59,7 @@ export default function AllProducts(props) {
             setLoading(true);
             const params = {
                 ...(user !== null && { user_id: user?.user_id }),
+                ...(item !== null && { category: item }),
             }
 
             const response = await dispatch(getProducts(page, params));
@@ -163,7 +164,10 @@ export default function AllProducts(props) {
                             showsVerticalScrollIndicator={false}
                             data={filterProducts}
                             numColumns={2}
-                            renderItem={({ item }) => <ProductCard item={item} />}
+                            renderItem={({ item }) => <ProductCard item={item}
+                                onFav={() => {
+
+                                }} />}
                         // onEndReachedThreshold={0.1}
                         // onEndReached={() => {
                         //     if (!loading && hasMore) {
@@ -182,7 +186,8 @@ export default function AllProducts(props) {
                 <CustomButton
                     onPress={() => {
                         setPage(pre => pre - 1)
-                        getProduct()
+                        setHasMore(true)
+                        getProduct(page - 1)
                     }}
                     disabled={page === 1}
                     btnStyle={styles.btnStyle}
@@ -192,9 +197,10 @@ export default function AllProducts(props) {
 
                 <CustomButton
                     btnStyle={styles.btnStyle}
+                    disabled={!hasMore}
                     onPress={() => {
                         setPage(pre => pre + 1)
-                        getProduct()
+                        getProduct(page + 1)
                     }}
                     label={"Next"}
                 />

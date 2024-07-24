@@ -317,7 +317,7 @@ export const STYLES = StyleSheet.create({
 
 export const CONSTANTS = {
 
-    SHHIPPING_ZONE_ID: 3,
+    SHHIPPING_ZONE_ID: 1,
     login_id: "9C42HVfgYJk",
     transactionKey: "5Hh59u46KF8cztCD",
     stripe_Payment_url: "https://demo25.mystagingserver.site/angel/wp-json/stripe-payment/v1/create-payment-intent",

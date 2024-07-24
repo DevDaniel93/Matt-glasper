@@ -22,6 +22,7 @@ export default function Home(props) {
     const [search, setSearch] = useState('')
     const [products, setProducts] = useState([]);
     const user = useSelector(state => state.Auth.user)
+
     const [filterProducts, setFilterProducts] = useState(products)
     const categories = useSelector(state => state?.categories?.categories);
     const dispatch = useDispatch();
@@ -72,8 +73,8 @@ export default function Home(props) {
     //     [dispatch, loading, page, hasMore]
 
     // );
-    const getProduct = async () => {
-        console.log("in get product", page)
+    const getProduct = async (page) => {
+
         if (loading || !hasMore) return; // Prevent multiple calls if already loading or no more data
         try {
             console.log("Fetching products");
@@ -185,7 +186,7 @@ export default function Home(props) {
                     <CustomButton
                         onPress={() => {
                             setPage(pre => pre - 1)
-                            getProduct()
+                            getProduct(page - 1)
                         }}
                         disabled={page === 1}
                         btnStyle={styles.btnStyle}
@@ -198,7 +199,7 @@ export default function Home(props) {
                         disabled={!hasMore}
                         onPress={() => {
                             setPage(pre => pre + 1)
-                            getProduct()
+                            getProduct(page + 1)
                         }}
                         label={"Next"}
                     />

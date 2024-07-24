@@ -262,10 +262,12 @@ export default function CheckOut(props) {
 
         if (error) {
             dispatch(setLoading(false))
+            console.log({ error })
             console.log('Payment failed:', error.message);
         } else if (paymentIntent) {
             // setPaidStatus(true)
             const orderDetials = Place_order(true)
+
             const response = await dispatch(postOrder(orderDetials))
 
 
@@ -278,6 +280,7 @@ export default function CheckOut(props) {
 
         }
     };
+    console.log("asjbkbbk", orderDetails)
 
     // ==================================== Authorize.net Payment Method==============================
     const handleTransactionAuthorize = async (id) => {

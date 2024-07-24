@@ -24,7 +24,38 @@ export default function WishList() {
     const [loading, setLoading] = useState(false);
 
 
-    const getProduct = useCallback(async () => {
+    // const getProduct = useCallback(async () => {
+
+    //     if (loading || !hasMore) return; // Prevent multiple calls if already loading or no more data
+    //     try {
+    //         console.log("Fetching products");
+    //         setLoading(true);
+    //         const params = {
+    //             ...(user !== null && { user_id: user?.user_id }),
+    //         }
+
+    //         const response = await dispatch(getProducts(page, params));
+
+    //         if (response.length === 0) {
+    //             setHasMore(false); // No more data to load
+    //         } else {
+    //             const filterFav = response.filter((item) => item?.favourite === true);
+    //             // setProducts((prevProducts) => [...prevProducts, ...filterFav]);
+    //             setProducts((prevProducts) => {
+    //                 const newProducts = filterFav.filter(
+    //                     (newItem) => !prevProducts.some((existingItem) => existingItem.id === newItem.id)
+    //                 );
+    //                 return [...prevProducts, ...newProducts];
+    //             });
+    //             setPage(prevPage => prevPage + 1);
+    //         }
+    //         setLoading(false);
+    //     } catch (error) {
+    //         console.log("Failed to fetch products:", error);
+    //         setLoading(false);
+    //     }
+    // }, [dispatch, loading, page, hasMore]);
+    const getProduct = async () => {
 
         if (loading || !hasMore) return; // Prevent multiple calls if already loading or no more data
         try {
@@ -34,27 +65,17 @@ export default function WishList() {
                 ...(user !== null && { user_id: user?.user_id }),
             }
 
-            const response = await dispatch(getProducts(page, params));
+            const response = await dispatch(getFavProduct(user?.user_id));
 
-            if (response.length === 0) {
-                setHasMore(false); // No more data to load
-            } else {
-                const filterFav = response.filter((item) => item?.favourite === true);
-                // setProducts((prevProducts) => [...prevProducts, ...filterFav]);
-                setProducts((prevProducts) => {
-                    const newProducts = filterFav.filter(
-                        (newItem) => !prevProducts.some((existingItem) => existingItem.id === newItem.id)
-                    );
-                    return [...prevProducts, ...newProducts];
-                });
-                setPage(prevPage => prevPage + 1);
-            }
+            setProducts(response?.products)
+
             setLoading(false);
         } catch (error) {
             console.log("Failed to fetch products:", error);
             setLoading(false);
         }
-    }, [dispatch, loading, page, hasMore]);
+    }
+
 
 
     useFocusEffect(
@@ -63,7 +84,7 @@ export default function WishList() {
             return () => {
                 // Cleanup function if needed
             };
-        }, [getProduct])
+        }, [])
     );
     useFocusEffect(
         useCallback(() => {
@@ -109,15 +130,15 @@ export default function WishList() {
                     renderItem={({ item }) => <ProductCard
                         onFav={removeById}
                         item={item} />}
-                    onEndReachedThreshold={0.1}
-                    onEndReached={() => {
-                        if (!loading && hasMore) {
-                            getProduct();
-                        }
-                    }}
-                    ListFooterComponent={() =>
-                        loading && <ActivityIndicator size="large" color={currentTheme.primary} style={{ marginVertical: 20 }} />
-                    }
+                // onEndReachedThreshold={0.1}
+                // onEndReached={() => {
+                //     if (!loading && hasMore) {
+                //         getProduct();
+                //     }
+                // }}
+                // ListFooterComponent={() =>
+                //     loading && <ActivityIndicator size="large" color={currentTheme.primary} style={{ marginVertical: 20 }} />
+                // }
                 />
                 : <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
                     <Text style={{ color: currentTheme?.defaultTextColor, fontSize: SIZES.twenty, marginTop: SIZES.twenty }}>
