@@ -321,7 +321,7 @@ export const CONSTANTS = {
     login_id: "9C42HVfgYJk",
     transactionKey: "5Hh59u46KF8cztCD",
     stripe_Payment_url: "https://demo25.mystagingserver.site/angel/wp-json/stripe-payment/v1/create-payment-intent",
-    stripe_Key: "pk_test_51PfgiXKok2Hx7w4Uhe7ilNHF7FKjxIL8qmgwsqWZhu9KBpMAY8IjLTdoSgm5oX5JuzBmsg2LppFcdLDhtJwxvDRi00VqUJ0E7k",
+    stripe_Key: "pk_test_51PgPA1EYE3QbKax8K6lLO1iFzTS4XKEXZJX05kGHrVHgAFXGv6plWodZZ3WkkPcVul5at8cDdLuUoqlftklEoAzD00KgpWDLbd",
 
     API_URLS: {
         Consumer_key: "ck_ba3d79fe0eec184c5c7b68ef7df17b5c91a9f2f0",

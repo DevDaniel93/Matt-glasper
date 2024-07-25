@@ -280,7 +280,7 @@ export default function CheckOut(props) {
 
         }
     };
-    console.log("asjbkbbk", orderDetails)
+
 
     // ==================================== Authorize.net Payment Method==============================
     const handleTransactionAuthorize = async (id) => {

@@ -41,6 +41,7 @@ export default function Reviews({ id }) {
 
             if (star === 0 || review === '') {
                 ErrorAlert("Please rate the product and write the review")
+                return
             }
             else {
                 const formdata = new FormData()
@@ -110,37 +111,44 @@ export default function Reviews({ id }) {
             <View style={{ marginTop: SIZES.twenty }}>
                 <ActivityIndicator size={"large"} color={COLORS.primary} />
             </View> :
+
             <View>
                 <Text style={[styles.heading, { color: currentTheme.defaultTextColor, }]}>
                     {t('Reviews')}
                 </Text>
-                <View style={{ alignItems: "flex-start", marginVertical: SIZES.five }}>
-                    <Stars
-                        display={star}
-                        spacing={8}
-                        count={5}
-                        starSize={SIZES.twentyFive}
-                        update={(val) => { setStar(val) }}
-                        disabled={false}
-                        fullStar={<Icon name={'star'} type={IconType.MaterialCommunityIcons} color={COLORS.golden} />}
-                        emptyStar={<Icon name={'star-outline'} type={IconType.MaterialCommunityIcons} color={COLORS.golden} />}
-                        halfStar={<Icon name={'star-half'} type={IconType.MaterialCommunityIcons} color={COLORS.golden} />}
-                    />
-                </View>
-                <EditText
-                    value={review}
-                    onChangeText={(e) => {
-                        setReview(e)
-                    }}
-                    placeholder={t('WriteYourReviews')}
-                    inputArea={{ borderRadius: SIZES.fifty }}
-                />
-                <CustomButton
-                    onPress={() => {
-                        postReview()
-                    }}
-                    label={t('AddReview')}
-                />
+                {user !== null &&
+                    <>
+
+                        <View style={{ alignItems: "flex-start", marginVertical: SIZES.five }}>
+                            <Stars
+                                display={star}
+                                spacing={8}
+                                count={5}
+                                starSize={SIZES.twentyFive}
+                                update={(val) => { setStar(val) }}
+                                disabled={false}
+                                fullStar={<Icon name={'star'} type={IconType.MaterialCommunityIcons} color={COLORS.golden} />}
+                                emptyStar={<Icon name={'star-outline'} type={IconType.MaterialCommunityIcons} color={COLORS.golden} />}
+                                halfStar={<Icon name={'star-half'} type={IconType.MaterialCommunityIcons} color={COLORS.golden} />}
+                            />
+                        </View>
+                        <EditText
+                            value={review}
+                            onChangeText={(e) => {
+                                setReview(e)
+                            }}
+                            placeholder={t('WriteYourReviews')}
+                            inputArea={{ borderRadius: SIZES.fifty }}
+                        />
+                        <CustomButton
+                            onPress={() => {
+                                postReview()
+                            }}
+                            label={t('AddReview')}
+                        />
+                    </>
+                }
+
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={reviews}

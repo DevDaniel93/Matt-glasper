@@ -28,6 +28,7 @@ export default function SingleProduct(props) {
     const [price, setPrice] = useState(productDetails?.price)
     const [variations, setVariations] = useState([])
     const [images, setImages] = useState(productDetails?.images)
+    const [attributes, setAttributes] = useState(productDetails?.attributes)
     const [selectedVariation, setSelectedVariation] = useState(null)
     const dispatch = useDispatch()
     const [selectedAttributes, setSelectedAttributes] = useState([]);
@@ -38,9 +39,6 @@ export default function SingleProduct(props) {
             dispatch(setLoading(true))
             const response = await dispatch(getVariation(productDetails?.id))
             setVariations(response)
-            if (response?.length > 0) {
-                setSelectedVariation(response[0])
-            }
             dispatch(setLoading(false))
 
         } catch (error) {
@@ -53,7 +51,6 @@ export default function SingleProduct(props) {
     useEffect(() => {
         getVariationByProductID()
     }, [])
-
 
     const Header = () => {
         return (
@@ -111,7 +108,7 @@ export default function SingleProduct(props) {
                 navigation.navigate(SCREENS.MyCart)
                 dispatch(addCart(data))
             }
-            else if (productDetails.type === 'variable' && selectedAttributes.length != []) {
+            else if (productDetails.type === 'variable' && selectedAttributes.length != [] && selectedVariation !== null) {
                 const data = {
                     id: productDetails?.id,
                     productName: productDetails?.name,
@@ -161,8 +158,6 @@ export default function SingleProduct(props) {
                 <View style={{ height: height * .5, }}>
                     <Header />
                     <View style={styles.variationsContainer}>
-
-
                         <ScrollView
                             showsVerticalScrollIndicator={false}
                             style={{ flexGrow: 1 }}
@@ -175,6 +170,7 @@ export default function SingleProduct(props) {
                                                 setSelectedVariation(item)
                                                 setPrice(item?.on_sale ? item?.regular_price : item?.price)
                                                 setImages([item?.image])
+                                                setAttributes(item?.attributes)
                                             } catch (error) {
                                                 console.log(error)
                                             }
@@ -250,11 +246,7 @@ export default function SingleProduct(props) {
                             </Text>
                             <TouchableOpacity style={[styles.btn, { borderColor: currentTheme.defaultTextColor }]}
                                 onPress={() => {
-
-
                                     HandleQuantity()
-
-
                                 }}>
                                 <Icon
                                     name={"plus"}
@@ -304,17 +296,18 @@ export default function SingleProduct(props) {
                     />
 
 
-                    {productDetails?.attributes?.length &&
+                    {attributes?.length &&
                         <ScrollView
 
                             style={{ marginVertical: SIZES.ten }}>
-                            {productDetails?.attributes.map((val) => (
+                            {(attributes || []).map((val) => (
+
                                 <View>
                                     <Text style={[styles.attributesTitle, { color: currentTheme.defaultTextColor, }]}>{t('Choose')} {val?.name}</Text>
                                     <ScrollView
                                         showsHorizontalScrollIndicator={false}
                                         horizontal>
-                                        {(val?.options || []).map((item) => (
+                                        {val?.options?.length ? (val?.options || []).map((item) => (
                                             <TouchableOpacity
                                                 onPress={() => {
                                                     toggleAttributeSelection(val, item)
@@ -326,7 +319,20 @@ export default function SingleProduct(props) {
                                                     style={{ color: isAttributeSelected(val?.name, item) ? COLORS.white : currentTheme.defaultTextColor }}
                                                 >{item}</Text>
                                             </TouchableOpacity>
-                                        ))}
+                                        )) :
+
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    toggleAttributeSelection(val, val?.option)
+                                                }}
+                                                style={[styles.Obj,
+                                                { backgroundColor: isAttributeSelected(val?.name, val?.option) ? currentTheme.primary : currentTheme.Background, borderColor: currentTheme.defaultTextColor }
+                                                ]}>
+                                                <Text
+                                                    style={{ color: isAttributeSelected(val?.name, val?.option) ? COLORS.white : currentTheme.defaultTextColor }}
+                                                >{val?.option}</Text>
+                                            </TouchableOpacity>}
+
                                     </ScrollView>
 
                                 </View>
@@ -340,9 +346,9 @@ export default function SingleProduct(props) {
                         }}
                         label={
                             (productDetails?.manage_stock === true && productDetails?.stock_quantity < 0) ?
-                                t('OutOfStock') + " | $ " + Number(quantity * productDetails?.price).toFixed(2)
+                                t('OutOfStock') + " | $ " + Number(quantity * price).toFixed(2)
                                 :
-                                t('AddToCart') + " | $ " + Number(quantity * productDetails?.price).toFixed(2)}
+                                t('AddToCart') + " | $ " + Number(quantity * price).toFixed(2)}
                     />
                     <Reviews id={productDetails?.id} />
                 </View>
@@ -358,8 +364,10 @@ export default function SingleProduct(props) {
                             color={COLORS.white}
                         />
                     </TouchableOpacity>
-                    <Text style={styles.modalText}>
+                    <Text style={[styles.modalText, { color: currentTheme.defaultTextColor }]}>
                         {t('SelectProductSize')}
+                        {"\n"}&{"\n"}
+                        {t('SelectVariation')}
                     </Text>
                 </CustomModal>
             </ScrollView>
@@ -463,8 +471,8 @@ const styles = StyleSheet.create({
         borderWidth: 1
     },
     modalText: {
-        color: COLORS.defaultTextColor,
-        alignSelf: "center",
+
+        textAlign: "center",
         marginVertical: SIZES.twentyFive,
         fontSize: SIZES.fifteen + 2,
         fontWeight: "600"
