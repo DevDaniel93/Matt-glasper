@@ -42,7 +42,11 @@ export default function DrawerNavigator() {
     return (
         <Drawer.Navigator
             initialRouteName={SCREENS.BottamTab}
+            
             screenOptions={{
+                drawerStyle: {
+                    backgroundColor: currentTheme.Background 
+                },
                 sceneContainerStyle: {
                     backgroundColor: currentTheme.Background,
                     flex: 1,
@@ -53,6 +57,7 @@ export default function DrawerNavigator() {
                 },
                 cardStyleInterpolator: fadeInAnimation,
             }}
+         
             drawerContent={(props) => <CustomDrawer {...props} />}
 
         >

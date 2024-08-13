@@ -111,10 +111,9 @@ const CustomDrawer = (props) => {
 
     return (
         <DrawerContentScrollView {...props} contentContainerStyle={[styles.container, { backgroundColor: currentTheme.Background }]}>
-            <View style={{ marginHorizontal: SIZES.fifteen }}>
+            <View style={{ marginHorizontal: SIZES.fifteen  }}>
                 <CustomHeader />
                 <View style={[styles.line, { borderColor: currentTheme.defaultTextColor }]} />
-
                 <ScrollView>
                     {translatedMenu.map((item) => (
                         <TouchableOpacity
@@ -229,6 +228,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'space-between',
+        
     },
     line: {
         borderWidth: 1,

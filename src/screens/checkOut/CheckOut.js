@@ -38,7 +38,6 @@ export default function CheckOut(props) {
     const [enablePaymentButton, setEnablePaymentButton] = useState(false)
     const [progress, setProgress] = useState(0)
     const voucherCode = useSelector(state => state.Voucher.vouchers)[0]
-
     const cart = useSelector(state => state.Cart.cart)
     const shippingMethods = useSelector(state => state.Shipping.shippingType)
     const paypal = useSelector(state => state.Payment.paypal)[0]

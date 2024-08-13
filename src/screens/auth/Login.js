@@ -15,8 +15,8 @@ export default function Login(props) {
     // const { navigation } = props
     const theme = useSelector(state => state.Theme.theme)
     const currentTheme = getTheme(theme)
-    const [email, setEmail] = useState(__DEV__ ? 'iqra@yopmail.com' : "")
-    const [password, setPassword] = useState(__DEV__ ? '123123123' : "")
+    const [email, setEmail] = useState(__DEV__ ? 'taimoor@yopmail.com' : "")
+    const [password, setPassword] = useState(__DEV__ ? 'Taimoor123@' : "")
     const { t } = useTranslation();
     const dispatch = useDispatch()
     const navigation = useNavigation()

@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         marginHorizontal: SIZES.ten
     },
     TextInput: {
-        color: COLORS.black,
+        color: COLORS.defaultBtnColor,
         flex: 1
     }
 })

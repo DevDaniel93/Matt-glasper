@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet,Platform } from "react-native";
 import { useSelector } from "react-redux";
 export const { width, height } = Dimensions.get("window");
 /* * Colors * */
@@ -296,7 +296,7 @@ export const STYLES = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: SIZES.twenty,
-        paddingTop: SIZES.twenty * 1.5,
+        paddingTop:Platform.OS==="ios"?SIZES.fifteen: SIZES.twenty * 1.5,
         // backgroundColor: COLORS.white
         // marginTop: 20
 

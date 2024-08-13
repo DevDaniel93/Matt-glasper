@@ -11,6 +11,7 @@ const CustomDropDownPicker = (props) => {
     const currentTheme = getTheme(theme)
     const [focusColor, setFocusColor] = useState(currentTheme.defaultTextColor);
     const [open, setOpen] = useState(false)
+    const [zIndex, setZindex] = useState(0)
     const [value, setValue] = useState(props?.value ? props?.value : null)
     const [items, setItems] = useState(props?.list ? props?.list : [])
 
@@ -27,19 +28,22 @@ const CustomDropDownPicker = (props) => {
             <DropDownPicker
                 onOpen={() => {
                     setFocusColor(currentTheme.primary)
+                    setZindex(1000)
                 }}
+        
                 style={{
                     backgroundColor: currentTheme.Background,
                     borderColor: currentTheme.charcoalGrey,
+
                 }}
                 onClose={() => {
                     setFocusColor(currentTheme.defaultTextColor)
+                    setZindex(0)
+
                 }}
-
-
                 textStyle={{ color: currentTheme.defaultTextColor, }}
-                listItemContainerStyle={{ backgroundColor: currentTheme.Background, }}
-                containerStyle={[styles(props).dropDown,]}
+                listItemContainerStyle={{ backgroundColor: currentTheme.Background}}
+                containerStyle={[styles(props).dropDown,{backgroundColor: currentTheme.Background}]}
                 placeholder={props?.placeholder}
                 open={open}
                 value={props?.value}
@@ -62,12 +66,12 @@ const styles = (props) => StyleSheet.create({
         paddingTop: SIZES.ten,
         zIndex: props.zIndex ? props.zIndex : 0,
         height: SIZES.twentyFive * 2.3,
+  
     },
     textInputView: {
 
         // width: '100%',
         justifyContent: 'center',
-
         borderRadius: Math.sqrt(width + height),
     },
     textLabel: {

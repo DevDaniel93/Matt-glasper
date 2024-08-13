@@ -184,7 +184,8 @@ const App = () => {
     return (
       <SafeAreaView style={styles.safeAreaView}>
         <StatusBar
-          backgroundColor={COLORS.transparent}
+        
+          backgroundColor={COLORS.backgroundGray}
           barStyle={"dark-content"}
         />
         <AnimatedSplash
@@ -256,7 +257,7 @@ const App = () => {
 const styles = StyleSheet.create({
   safeAreaView: {
     flex: 1,
-    color: COLORS.Background
+    backgroundColor: COLORS.Background
   },
   loadingContainer: {
     flex: 1,
