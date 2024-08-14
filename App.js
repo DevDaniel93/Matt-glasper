@@ -192,7 +192,7 @@ const App = () => {
           translucent={true}
           isLoaded={isLoaded && isI18nInitialized}
           logoImage={IMAGES.logo}
-          backgroundColor={COLORS.black}
+          // backgroundColor={COLORS.}
           logoHeight={SIZES.fifty * 3}
           logoWidth={SIZES.fifty * 3}
         />

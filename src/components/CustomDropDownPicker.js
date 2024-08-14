@@ -34,16 +34,16 @@ const CustomDropDownPicker = (props) => {
                 style={{
                     backgroundColor: currentTheme.Background,
                     borderColor: currentTheme.charcoalGrey,
-
+ 
                 }}
                 onClose={() => {
                     setFocusColor(currentTheme.defaultTextColor)
                     setZindex(0)
-
                 }}
-                textStyle={{ color: currentTheme.defaultTextColor, }}
-                listItemContainerStyle={{ backgroundColor: currentTheme.Background}}
-                containerStyle={[styles(props).dropDown,{backgroundColor: currentTheme.Background}]}
+                textStyle={{ color: currentTheme.defaultTextColor,}}
+                modalContentContainerStyle={{backgroundColor:"red"}}
+                listItemContainerStyle={{ backgroundColor: currentTheme.Background, }}
+                containerStyle={[styles(props).dropDown,{backgroundColor: currentTheme.Background,}]}
                 placeholder={props?.placeholder}
                 open={open}
                 value={props?.value}

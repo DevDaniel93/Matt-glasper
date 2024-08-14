@@ -79,6 +79,7 @@ const Shipping = (props) => {
                 placeholder={t('EnterYourFirstName')}
             />
 
+
             <EditText
                 label={t('LastName')}
                 value={lastName}
@@ -92,7 +93,7 @@ const Shipping = (props) => {
                 setFlag={setFlag}
                 setPhone={setPhone}
                 setCountryCode={setCountryCode} />
-
+<View style={{zIndex:1000}}>
             <CustomDropDownPicker
                 label={t('State')}
                 list={stateList.map(state => ({ label: state.name, value: state.code }))}
@@ -104,6 +105,7 @@ const Shipping = (props) => {
                 zIndex={1000}
                 onChangeValue={setState}
             />
+            </View>
             <EditText
                 label={t('City')}
                 value={city}

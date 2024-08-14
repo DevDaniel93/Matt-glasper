@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: SIZES.ten,
         borderRadius: Math.sqrt(width + height),
+        
     },
     textInputArea: {
         flex: 1,
