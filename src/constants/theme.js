@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet,Platform } from "react-native";
+import { Dimensions, StyleSheet, Platform } from "react-native";
 import { useSelector } from "react-redux";
 export const { width, height } = Dimensions.get("window");
 /* * Colors * */
@@ -296,7 +296,7 @@ export const STYLES = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: SIZES.twenty,
-        paddingTop:Platform.OS==="ios"?SIZES.fifteen: SIZES.twenty * 1.5,
+        paddingTop: Platform.OS === "ios" ? SIZES.fifteen : SIZES.twenty * 1.5,
         // backgroundColor: COLORS.white
         // marginTop: 20
 
@@ -321,7 +321,7 @@ export const CONSTANTS = {
     login_id: "9C42HVfgYJk",
     transactionKey: "5Hh59u46KF8cztCD",
     stripe_Payment_url: "https://demo25.mystagingserver.site/angel/wp-json/stripe-payment/v1/create-payment-intent",
-    stripe_Key: "pk_test_51PgPA1EYE3QbKax8K6lLO1iFzTS4XKEXZJX05kGHrVHgAFXGv6plWodZZ3WkkPcVul5at8cDdLuUoqlftklEoAzD00KgpWDLbd",
+    stripe_Key: "pk_test_51QEuI4FDMO2okob46Rab12cS9zAGo2sLnUECIUJVhemZlnSgkdCV0RkSHEtBHqHMzTAtf00Xu6EDRUYB3J9ecGLk00pZHrPfdt",
 
     API_URLS: {
         Consumer_key: "ck_ba3d79fe0eec184c5c7b68ef7df17b5c91a9f2f0",
